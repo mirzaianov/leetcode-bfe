@@ -1,0 +1,30 @@
+// const isPowerOfFour = function (n) {
+//     const myLog = Math.log(n) / Math.log(4);
+
+//     console.log(myLog);
+
+//     if (myLog % 1 === 0) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// };
+
+const isPowerOfFour = function (n) {
+    if (n < 1) {
+        return false;
+    }
+
+    if (n == 1) {
+        return true;
+    }
+
+    return isPowerOfFour(n / 4);
+};
+
+console.log(isPowerOfFour(0)); // false
+console.log(isPowerOfFour(1)); // true
+console.log(isPowerOfFour(4)); // true
+console.log(isPowerOfFour(5)); // false
+console.log(isPowerOfFour(16)); // true
+console.log(isPowerOfFour(256)); // true
