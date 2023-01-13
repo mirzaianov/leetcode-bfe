@@ -1,8 +1,3 @@
-'use strict';
-
-const nums = [2, 7, 11, 15],
-    target = 26;
-
 const twoSum = function (nums, target) {
     for (let i = 0; i < nums.length; i++) {
         for (let j = i + 1; j < nums.length; j++) {
@@ -13,4 +8,4 @@ const twoSum = function (nums, target) {
     }
 };
 
-console.log(twoSum(nums, target));
+console.log(twoSum([2, 7, 11, 15], 26));
