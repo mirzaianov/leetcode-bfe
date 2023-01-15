@@ -1,11 +1,29 @@
-const smallerNumbersThanCurrent = function (nums) {
-    let result = [];
+// const smallerNumbersThanCurrent = function (nums) {
+//     let result = [];
+
+//     for (let i = 0; i < nums.length; i++) {
+//         result.push(nums.filter((item) => item < nums[i]).length);
+//     }
+
+//     return result;
+// };
+
+var smallerNumbersThanCurrent = function (nums) {
+    var arr = [];
 
     for (let i = 0; i < nums.length; i++) {
-        result.push(nums.filter((item) => item < nums[i]).length);
+        var count = 0;
+
+        for (let j = 0; j < nums.length; j++) {
+            if (nums[i] > nums[j]) {
+                count++;
+            }
+        }
+
+        arr.push(count);
     }
 
-    return result;
+    return arr;
 };
 
 console.log(smallerNumbersThanCurrent([8, 1, 2, 2, 3])); // [4, 0, 1, 1, 3]
