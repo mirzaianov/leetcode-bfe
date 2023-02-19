@@ -7,8 +7,6 @@ const reverseString = function (s) {
         l++;
         r--;
     }
-
-    return s;
 };
 
 console.log(reverseString(['h', 'e', 'l', 'l', 'o'])); // ["o","l","l","e","h"]
