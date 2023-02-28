@@ -14,7 +14,9 @@ const removeDuplicates = function (nums) {
         }
     }
 
-    return nums.slice(0, slowPointer + 1);
+    nums.splice(slowPointer + 1);
+
+    return nums;
 };
 
 console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4])); // 5, [0,1,2,3,4,_,_,_,_,_]
