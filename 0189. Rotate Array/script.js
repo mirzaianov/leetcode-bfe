@@ -24,7 +24,7 @@
 //     return nums;
 // };
 
-var rotate = function (nums, k) {
+const rotate = function (nums, k) {
     if (k === 0) {
         return nums;
     }
