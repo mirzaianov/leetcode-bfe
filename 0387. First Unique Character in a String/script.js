@@ -1,13 +1,29 @@
+// const firstUniqChar = function (s) {
+//     const map = {};
+
+//     for (let i = 0; i < s.length; i++) {
+//         map[s[i]] = map[s[i]] + 1 || 1;
+//     }
+
+//     for (let i = 0; i < Object.keys(map).length; i++) {
+//         if (Object.values(map)[i] === 1) {
+//             return s.indexOf(Object.keys(map)[i]);
+//         }
+//     }
+
+//     return -1;
+// };
+
 const firstUniqChar = function (s) {
-    const map = {};
+    const store = {};
 
     for (let i = 0; i < s.length; i++) {
-        map[s[i]] = map[s[i]] + 1 || 1;
+        store[s[i]] = store[s[i]] ? store[s[i]] + 1 : 1;
     }
 
-    for (let i = 0; i < Object.keys(map).length; i++) {
-        if (Object.values(map)[i] === 1) {
-            return s.indexOf(Object.keys(map)[i]);
+    for (let i = 0; i < s.length; i++) {
+        if (store[s[i]] === 1) {
+            return i;
         }
     }
 
