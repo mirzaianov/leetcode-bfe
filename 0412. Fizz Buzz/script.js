@@ -16,22 +16,40 @@
 //     return arr;
 // };
 
+// const fizzBuzz = function (n) {
+//     const accum = [];
+
+//     for (let i = 1; i <= n; i++) {
+//         if (i % 15 === 0) {
+//             accum.push('FizzBuzz');
+//         } else if (i % 5 === 0) {
+//             accum.push('Buzz');
+//         } else if (i % 3 === 0) {
+//             accum.push('Fizz');
+//         } else {
+//             accum.push(`${i}`);
+//         }
+//     }
+
+//     return accum;
+// };
+
 const fizzBuzz = function (n) {
-    const accum = [];
+    const store = [];
 
     for (let i = 1; i <= n; i++) {
         if (i % 15 === 0) {
-            accum.push('FizzBuzz');
+            store.push('FizzBuzz');
         } else if (i % 5 === 0) {
-            accum.push('Buzz');
+            store.push('Buzz');
         } else if (i % 3 === 0) {
-            accum.push('Fizz');
+            store.push('Fizz');
         } else {
-            accum.push(`${i}`);
+            store.push(`${i}`);
         }
     }
 
-    return accum;
+    return store;
 };
 
 console.log(fizzBuzz(3)); // ["1","2","Fizz"]
