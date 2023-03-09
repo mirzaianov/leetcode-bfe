@@ -8,13 +8,25 @@
 //     }
 // };
 
+// const isPowerOfThree = function (n) {
+//     if (n === 0) return false;
+
+//     const base = 3;
+//     const result = Math.log10(n) / Math.log10(base);
+
+//     return result === Math.floor(result);
+// };
+
 const isPowerOfThree = function (n) {
-    if (n === 0) return false;
+    const base = 2;
 
-    const base = 3;
-    const result = Math.log10(n) / Math.log10(base);
-
-    return result === Math.floor(result);
+    if (n < 1) {
+        return false;
+    } else if (n === 1) {
+        return true;
+    } else {
+        return isPowerOfThree(n / base);
+    }
 };
 
 console.log(isPowerOfThree(0)); // false
