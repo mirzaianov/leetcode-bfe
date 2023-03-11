@@ -1,3 +1,5 @@
+// #1
+
 // const generate = function (numRows) {
 //     const result = [];
 
