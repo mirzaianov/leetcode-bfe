@@ -16,24 +16,17 @@ node2.next = node3;
 node3.next = node4;
 node4.next = node5;
 
-const removeElements = function (head, val) {
-    if (!head) return head;
+// const deleteNode = function (node) {
+//     let nextNode = node.next;
+//     node.val = nextNode.val;
+//     node.next = nextNode.next;
+//     nextNode.next = null;
+//     delete nextNode;
+// };
 
-    while (head && head.val === val) {
-        head = head.next;
-    }
-
-    let curr = head;
-
-    while (curr && curr.next) {
-        if (curr.next.val === val) {
-            curr.next = curr.next.next;
-        } else {
-            curr = curr.next;
-        }
-    }
-
-    return head;
+const deleteNode = function (node) {
+    node.val = node.next.val;
+    node.next = node.next.next;
 };
 
 const printLinkedList = (head) => {
@@ -45,8 +38,6 @@ const printLinkedList = (head) => {
     }
 };
 
-// console.log(printLinkedList(node1));
-
-removeElements(node1, '3');
+deleteNode(node3);
 
 console.log(printLinkedList(node1));
