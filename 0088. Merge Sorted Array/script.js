@@ -13,8 +13,21 @@
 //     return nums1;
 // };
 
+// const merge = function (nums1, m, nums2, n) {
+//     nums1.splice(m);
+//     nums1.push(...nums2);
+//     nums1.sort((a, b) => a - b);
+
+//     return nums1;
+// };
+
+// #2
+
 const merge = function (nums1, m, nums2, n) {
-    nums1.splice(m);
+    const divideIndex = nums1.length - n;
+
+    nums1.splice(divideIndex, n);
+
     nums1.push(...nums2);
     nums1.sort((a, b) => a - b);
 
