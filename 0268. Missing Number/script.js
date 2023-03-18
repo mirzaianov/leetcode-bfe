@@ -4,7 +4,7 @@
 //     return (arrLength * (arrLength + 1)) / 2 - nums.reduce((acc, item) => acc + item, 0);
 // };
 
-// 2
+// #2
 
 // const missingNumber = function (nums) {
 //     const arr = [];
@@ -19,7 +19,7 @@
 //     return fullLength - numsLength;
 // };
 
-// #2
+// #3
 
 const missingNumber = function (nums) {
     const fullArr = () => {
