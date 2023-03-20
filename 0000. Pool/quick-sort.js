@@ -70,26 +70,26 @@
 // #2
 
 function quickSort(arr) {
-    if (arr.length < 2) return arr;
+  if (arr.length < 2) return arr;
 
-    let pivotIndex = Math.floor((arr.length - 1) / 2);
-    let pivot = arr[pivotIndex];
-    let less = [];
-    let more = [];
+  let pivotIndex = Math.floor((arr.length - 1) / 2);
+  let pivot = arr[pivotIndex];
+  let less = [];
+  let more = [];
 
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === pivot) continue;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === pivot) continue;
 
-        if (arr[i] < pivot) {
-            less.push(arr[i]);
-        }
-
-        if (arr[i] > pivot) {
-            more.push(arr[i]);
-        }
+    if (arr[i] < pivot) {
+      less.push(arr[i]);
     }
 
-    return [...quickSort(less), pivot, ...quickSort(more)];
+    if (arr[i] > pivot) {
+      more.push(arr[i]);
+    }
+  }
+
+  return [...quickSort(less), pivot, ...quickSort(more)];
 }
 
 console.log(quickSort([3, 2, 15, 1, 5, 3, 11, 0]));

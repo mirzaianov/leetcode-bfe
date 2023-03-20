@@ -23,21 +23,34 @@
 //     return n2;
 // };
 
+// const climbStairs = function (n) {
+//   let memo = {};
+
+//   return count(n);
+
+//   function count(k) {
+//     if (memo[k]) return memo[k];
+//     if (k === 2) return 2;
+//     if (k <= 1) return 1;
+
+//     memo[k] = count(k - 1) + count(k - 2);
+//     return memo[k];
+//   }
+// };
+
 const climbStairs = function (n) {
-    let memo = {};
+  let one = 1,
+    two = 1;
 
-    return count(n);
+  for (let i = 0; i < n - 1; i++) {
+    const temp = one;
+    one += two;
+    two = temp;
+  }
 
-    function count(k) {
-        if (memo[k]) return memo[k];
-        if (k === 2) return 2;
-        if (k <= 1) return 1;
-
-        memo[k] = count(k - 1) + count(k - 2);
-        return memo[k];
-    }
+  return one;
 };
 
 // console.log(climbStairs(2)); // 2
 // console.log(climbStairs(3)); // 3
-console.log(climbStairs(5)); // 8
+console.log(climbStairs(10)); // 89
