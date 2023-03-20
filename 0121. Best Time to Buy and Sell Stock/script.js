@@ -16,20 +16,62 @@
 //     }
 // };
 
-const maxProfit = function (prices) {
-    let max = 0,
-        min = prices[0];
+// const maxProfit = function (prices) {
+//     let max = 0,
+//         min = prices[0];
 
-    for (let i = 1; i < prices.length; i++) {
-        let price = prices[i];
+//     for (let i = 1; i < prices.length; i++) {
+//         let price = prices[i];
 
-        max = Math.max(max, price - min);
-        min = Math.min(min, price);
+//         max = Math.max(max, price - min);
+//         min = Math.min(min, price);
 
-        console.log(`price: ${price}, max: ${max}, min: ${min}`);
+//         console.log(`price: ${price}, max: ${max}, min: ${min}`);
+//     }
+
+//     return max;
+// };
+
+// const maxProfit = function (prices) {
+//   let min = prices[0],
+//     max = 0;
+
+//   for (let i = 1; i < prices.length; i++) {
+//     const cur = prices[i];
+
+//     min = Math.min(min, cur);
+//     max = Math.max(max, cur - min);
+//   }
+
+//   return max;
+// };
+
+var maxProfit = function (prices) {
+  if (prices.length === 1) {
+    return 0;
+  }
+
+  let l = 0;
+  let r = 1;
+  let maxProfit = 0;
+
+  while (r < prices.length) {
+    if (prices[l] >= prices[r]) {
+      l = r;
+      r++;
+      continue;
     }
 
-    return max;
+    const profit = prices[r] - prices[l];
+
+    if (profit > maxProfit) {
+      maxProfit = profit;
+    }
+
+    r++;
+  }
+
+  return maxProfit;
 };
 
 console.log(maxProfit([7, 1, 5, 3, 6, 4])); // 5
