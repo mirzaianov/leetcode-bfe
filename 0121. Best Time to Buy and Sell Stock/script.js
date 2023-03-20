@@ -46,7 +46,7 @@
 //   return max;
 // };
 
-var maxProfit = function (prices) {
+const maxProfit = function (prices) {
   if (prices.length === 1) {
     return 0;
   }
