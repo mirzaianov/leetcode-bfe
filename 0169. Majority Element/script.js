@@ -18,17 +18,30 @@
 //     return 0;
 // };
 
+// const majorityElement = function (nums) {
+//     let map = {};
+//     const maxVal = nums.length / 2;
+
+//     for (let i = 0; i < nums.length; i++) {
+//         map[nums[i]] = map[nums[i]] + 1 || 1;
+
+//         if (map[nums[i]] > maxVal) {
+//             return nums[i];
+//         }
+//     }
+// };
+
+// #2
+
 const majorityElement = function (nums) {
-    let map = {};
-    const maxVal = nums.length / 2;
+  const store = {};
+  const maxValue = nums.length / 2;
 
-    for (let i = 0; i < nums.length; i++) {
-        map[nums[i]] = map[nums[i]] + 1 || 1;
+  for (let item of nums) {
+    store[item] = store[item] ? store[item] + 1 : 1;
 
-        if (map[nums[i]] > maxVal) {
-            return nums[i];
-        }
-    }
+    if (store[item] > maxValue) return item;
+  }
 };
 
 console.log(majorityElement([3, 2, 3])); // 3
