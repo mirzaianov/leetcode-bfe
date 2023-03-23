@@ -1,8 +1,8 @@
 class Node {
-    constructor(val) {
-        this.val = val;
-        this.next = null;
-    }
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
 }
 
 const node1 = new Node('1');
@@ -17,22 +17,22 @@ node3.next = node4;
 node4.next = node5;
 
 const printLinkedList = (head) => {
-    let current = head;
+  let current = head;
 
-    while (current !== null) {
-        console.log(current.val);
-        current = current.next;
-    }
+  while (current !== null) {
+    console.log(current.val);
+    current = current.next;
+  }
 };
 
 // printLinkedList(node1);
 
 const printLinkedListRecursive = (head) => {
-    if (head === null) return;
+  if (head === null) return;
 
-    console.log(head.val);
+  console.log(head.val);
 
-    printLinkedListRecursive(head.next);
+  printLinkedListRecursive(head.next);
 };
 
 // printLinkedListRecursive(node1);
@@ -52,18 +52,34 @@ const printLinkedListRecursive = (head) => {
 //     return previous;
 // };
 
+// const reverseList = function (head) {
+//     let prev = null;
+//     let current = head;
+
+//     while (current !== null) {
+//         const next = current.next;
+//         current.next = prev;
+//         prev = current;
+//         current = next;
+//     }
+
+//     return prev;
+// };
+
+// #3
+
 const reverseList = function (head) {
-    let prev = null;
-    let current = head;
+  let cur = head;
+  let prev = null;
 
-    while (current !== null) {
-        const next = current.next;
-        current.next = prev;
-        prev = current;
-        current = next;
-    }
+  while (cur !== null) {
+    let next = cur.next;
+    cur.next = prev;
+    prev = cur;
+    cur = next;
+  }
 
-    return prev;
+  return prev;
 };
 
 const newList = reverseList(node1);
