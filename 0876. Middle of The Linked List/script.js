@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -12,20 +10,15 @@
  * @return {ListNode}
  */
 
-const head = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-
-const middleNode = function (head) {
-    const divider = head.length / 2;
-    if (divider % 1 !== 0) {
-        const adj = divider - 0.5;
-        return head.slice(adj);
-    } else {
-        return head.slice(divider);
-    }
-};
-
-// middleNode(head);
-console.log(middleNode(head));
+// const middleNode = function (head) {
+//     const divider = head.length / 2;
+//     if (divider % 1 !== 0) {
+//         const adj = divider - 0.5;
+//         return head.slice(adj);
+//     } else {
+//         return head.slice(divider);
+//     }
+// };
 
 // var middleNode = function (head) {
 //     let slow = head;
@@ -37,3 +30,23 @@ console.log(middleNode(head));
 //     }
 //     return slow;
 // };
+
+// #2
+
+const middleNode = function (head) {
+  let cur = head;
+  let count = 0;
+
+  while (cur !== null) {
+    count++;
+    cur = cur.next;
+  }
+
+  const mid = Math.floor(count / 2);
+
+  for (let i = 0; i < mid; i++) {
+    head = head.next;
+  }
+
+  return head;
+};
