@@ -11,14 +11,30 @@
  * @return {boolean}
  */
 
+// const hasCycle = (head) => {
+//   let fast = head;
+
+//   while (fast && fast.next) {
+//     head = head.next;
+//     fast = fast.next.next;
+
+//     if (head === fast) return true;
+//   }
+
+//   return false;
+// };
+
+// #2
+
 const hasCycle = (head) => {
+  let slow = head;
   let fast = head;
 
   while (fast && fast.next) {
-    head = head.next;
+    slow = slow.next;
     fast = fast.next.next;
 
-    if (head === fast) return true;
+    if (slow === fast) return true;
   }
 
   return false;
