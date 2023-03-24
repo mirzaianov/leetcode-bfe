@@ -20,33 +20,36 @@
 //     }
 // };
 
-// var middleNode = function (head) {
-//     let slow = head;
-//     let fast = head;
-
-//     while (fast && fast.next) {
-//         fast = fast.next.next;
-//         slow = slow.next;
-//     }
-//     return slow;
-// };
-
 // #2
 
+// const middleNode = function (head) {
+//   let cur = head;
+//   let count = 0;
+
+//   while (cur !== null) {
+//     count++;
+//     cur = cur.next;
+//   }
+
+//   const mid = Math.floor(count / 2);
+
+//   for (let i = 0; i < mid; i++) {
+//     head = head.next;
+//   }
+
+//   return head;
+// };
+
+// #3
+
 const middleNode = function (head) {
-  let cur = head;
-  let count = 0;
+  let slow = head,
+    fast = head;
 
-  while (cur !== null) {
-    count++;
-    cur = cur.next;
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
   }
 
-  const mid = Math.floor(count / 2);
-
-  for (let i = 0; i < mid; i++) {
-    head = head.next;
-  }
-
-  return head;
+  return slow;
 };
