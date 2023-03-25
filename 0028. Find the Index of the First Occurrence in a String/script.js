@@ -18,7 +18,7 @@
 // };
 
 const strStr = function (haystack, needle) {
-    return haystack.indexOf(needle);
+  return haystack.indexOf(needle);
 };
 
 console.log(strStr('sddbutsad', 'sad')); // 6
