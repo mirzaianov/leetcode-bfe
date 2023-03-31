@@ -7,6 +7,7 @@ const removeElement = function (nums, val) {
       store++;
     }
   }
+
   return store;
 };
 
