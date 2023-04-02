@@ -18,4 +18,4 @@ const addDigits = function (num) {
 };
 
 console.log(addDigits(38)); // 2
-console.log(addDigits(0)); // 0
+console.log(addDigits(11)); // 0
