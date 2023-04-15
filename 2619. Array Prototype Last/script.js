@@ -1,7 +1,11 @@
-Array.prototype.last = function () {
-  if (this.length === 0) return -1;
+// Array.prototype.last = function () {
+//   if (this.length === 0) return -1;
 
-  return this.pop();
+//   return this.pop();
+// };
+
+Array.prototype.last = function () {
+  return this.length ? this[this.length - 1] : -1;
 };
 
 /**
