@@ -30,3 +30,7 @@ var minOperations = function (nums) {
 
   return count;
 };
+
+console.log(minOperations([1, 1, 1])); // 3
+console.log(minOperations([1, 5, 2, 4, 1])); // 14
+console.log(minOperations([8])); // 0
