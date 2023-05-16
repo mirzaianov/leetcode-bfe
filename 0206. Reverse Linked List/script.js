@@ -73,10 +73,10 @@ const reverseList = function (head) {
   let prev = null;
 
   while (cur !== null) {
-    let next = cur.next;
+    let temp = cur.next;
     cur.next = prev;
     prev = cur;
-    cur = next;
+    cur = temp;
   }
 
   return prev;
