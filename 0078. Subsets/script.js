@@ -1,17 +1,32 @@
-var subsets = function (nums) {
-  let res = [[]];
+// #1
 
-  for (let i = 0; i < nums.length; i++) {
-    const sub = [];
+// var subsets = function (nums) {
+//   let res = [[]];
 
-    for (let j = 0; j < res.length; j++) {
-      sub.push([...res[j], nums[i]]);
-    }
+//   for (let i = 0; i < nums.length; i++) {
+//     const sub = [];
 
-    res.push(...sub);
+//     for (let j = 0; j < res.length; j++) {
+//       sub.push([...res[j], nums[i]]);
+//     }
+
+//     res.push(...sub);
+//   }
+
+//   return res;
+// };
+
+// #2
+
+var subsets = function (nums, depth = 0, subset = [], results = []) {
+  if (depth === nums.length) {
+    results.push(subset);
+  } else {
+    subsets(nums, depth + 1, subset, results);
+    subsets(nums, depth + 1, [...subset, nums[depth]], results);
   }
 
-  return res;
+  return results;
 };
 
 console.log(subsets([1, 2, 3])); // [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
