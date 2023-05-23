@@ -31,18 +31,35 @@
 
 // #3
 
+// function twoSum(nums, target) {
+//   const store = {};
+
+//   for (let i = 0; i < nums.length; i++) {
+//     const element = nums[i];
+//     const complement = target - element;
+
+//     if (complement in store) return [store[complement], i];
+
+//     store[element] = i;
+
+//     console.log(store);
+//   }
+
+//   return [];
+// }
+
+// #4
+
 function twoSum(nums, target) {
   const store = {};
 
   for (let i = 0; i < nums.length; i++) {
-    const element = nums[i];
-    const complement = target - element;
+    const elem = nums[i];
+    const compl = target - elem;
 
-    if (complement in store) return [store[complement], i];
+    if (compl in store) return [store[compl], i];
 
-    store[element] = i;
-
-    console.log(store);
+    store[elem] = i;
   }
 
   return [];
