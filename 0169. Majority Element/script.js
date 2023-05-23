@@ -33,16 +33,32 @@
 
 // #2
 
+// const majorityElement = function (nums) {
+//   const store = {};
+//   const maxValue = nums.length / 2;
+
+//   for (let item of nums) {
+//     store[item] = store[item] ? store[item] + 1 : 1;
+
+//     if (store[item] > maxValue) return item;
+//   }
+// };
+
+// #3
+
 const majorityElement = function (nums) {
-  const store = {};
-  const maxValue = nums.length / 2;
+  let result;
+  let vote = 0;
 
-  for (let item of nums) {
-    store[item] = store[item] ? store[item] + 1 : 1;
+  for (let num of nums) {
+    if (vote === 0) result = num;
 
-    if (store[item] > maxValue) return item;
+    if (num === result) vote++;
+    else vote--;
   }
+
+  return result;
 };
 
-console.log(majorityElement([3, 2, 3])); // 3
+// console.log(majorityElement([3, 2, 3])); // 3
 console.log(majorityElement([2, 2, 1, 1, 1, 2, 2])); // 2
