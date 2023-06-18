@@ -1,5 +1,5 @@
 function flattenMax(arr) {
-  // return Math.max(...arr.flat());
+  //  return Math.max(...arr.flat());
   let res = [];
   let max = -Infinity;
 
