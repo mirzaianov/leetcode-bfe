@@ -25,16 +25,18 @@
 // };
 
 const rotate = function (nums, k) {
-    if (k === 0) {
-        return nums;
-    }
+  if (k === 0) {
+    return nums;
+  }
 
-    const n = nums.length;
-    k = k % n;
-    const move = n - k;
-    const right = nums.splice(move, n);
+  const n = nums.length;
+  k = k % n;
+  const move = n - k;
+  const right = nums.splice(move, n);
 
-    nums.unshift(...right);
+  nums.unshift(...right);
+
+  // return nums; // comment this
 };
 
 console.log(rotate([1, 2, 3, 4, 5, 6, 7], 3)); // [5,6,7,1,2,3,4]
