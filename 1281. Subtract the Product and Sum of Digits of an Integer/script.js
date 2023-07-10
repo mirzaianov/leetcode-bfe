@@ -1,20 +1,35 @@
+// const subtractProductAndSum = function (n) {
+//     let n2Array = n
+//         .toString()
+//         .split('')
+//         .map(function (char) {
+//             return parseInt(char, 10);
+//         });
+
+//     let multi = n2Array.reduce(function (acc, num) {
+//         return acc * num;
+//     }, 1);
+
+//     let sum = n2Array.reduce(function (acc, num) {
+//         return acc + num;
+//     }, 0);
+
+//     return multi - sum;
+// };
+
+// #2
+
 const subtractProductAndSum = function (n) {
-    let n2Array = n
-        .toString()
-        .split('')
-        .map(function (char) {
-            return parseInt(char, 10);
-        });
+  let n2Array = n
+    .toString()
+    .split("")
+    .map((char) => +char);
 
-    let multi = n2Array.reduce(function (acc, num) {
-        return acc * num;
-    }, 1);
+  let multi = n2Array.reduce((acc, num) => acc * num, 1);
 
-    let sum = n2Array.reduce(function (acc, num) {
-        return acc + num;
-    }, 0);
+  let sum = n2Array.reduce((acc, num) => acc + num, 0);
 
-    return multi - sum;
+  return multi - sum;
 };
 
 console.log(subtractProductAndSum(234));
