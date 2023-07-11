@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /*
 
@@ -8,19 +8,19 @@ In one step, if the current number is even, you have to divide it by 2, otherwis
 
 */
 
-const numberOfSteps = function (num) {
-    let steps = 0;
+// const numberOfSteps = function (num) {
+//     let steps = 0;
 
-    for (let i = 0; num > 0; steps++) {
-        if (num % 2 === 0) {
-            num /= 2;
-        } else {
-            num--;
-        }
-    }
+//     for (let i = 0; num > 0; steps++) {
+//         if (num % 2 === 0) {
+//             num /= 2;
+//         } else {
+//             num--;
+//         }
+//     }
 
-    return steps;
-};
+//     return steps;
+// };
 
 // const numberOfSteps = function (num) {
 //     for (var res = 0; num > 0; res++) num % 2 ? (num -= 1) : (num /= 2);
@@ -38,17 +38,32 @@ const numberOfSteps = function (num) {
 // };
 
 // let numberOfSteps = function (num) {
-//     let step = 0;
+//   let step = 0;
 
-//     while (num !== 0) {
-//         if (num % 2 === 0) {
-//             num /= 2;
-//         } else {
-//             num--;
-//         }
-//         step++;
+//   while (num) {
+//     if (num % 2 === 0) {
+//       num /= 2;
+//     } else {
+//       num--;
 //     }
-//     return step;
+
+//     step++;
+//   }
+
+//   return step;
 // };
 
-console.log(numberOfSteps(10598));
+// #2
+
+let numberOfSteps = function (num) {
+  let step = 0;
+
+  while (num) {
+    num % 2 === 0 ? (num /= 2) : num--;
+    step++;
+  }
+
+  return step;
+};
+
+console.log(numberOfSteps(10598)); // 20
