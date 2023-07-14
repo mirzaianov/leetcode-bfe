@@ -12,21 +12,40 @@
 //   return Object.values(myMap).reduce((acc, val) => acc + val, 0);
 // };
 
+// var diagonalSum = function (mat) {
+//   const length = mat[0].length;
+//   let j = length - 1;
+
+//   let sum = 0;
+
+//   for (let i = 0; i < length; i++) {
+//     if (i === j) {
+//       sum += mat[i][j];
+//     } else {
+//       sum += mat[i][j];
+//       sum += mat[i][i];
+//     }
+
+//     j--;
+//   }
+
+//   return sum;
+// };
+
+// #2
+
 var diagonalSum = function (mat) {
   const length = mat[0].length;
-  let j = length - 1;
 
   let sum = 0;
 
-  for (let i = 0; i < length; i++) {
+  for (let i = 0, j = length - 1; i < length; i++, j--) {
     if (i === j) {
       sum += mat[i][j];
     } else {
       sum += mat[i][j];
       sum += mat[i][i];
     }
-
-    j--;
   }
 
   return sum;
