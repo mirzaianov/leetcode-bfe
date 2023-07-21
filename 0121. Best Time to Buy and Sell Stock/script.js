@@ -46,32 +46,46 @@
 //   return max;
 // };
 
+// const maxProfit = function (prices) {
+//   if (prices.length === 1) {
+//     return 0;
+//   }
+
+//   let l = 0;
+//   let r = 1;
+//   let maxProfit = 0;
+
+//   while (r < prices.length) {
+//     if (prices[l] >= prices[r]) {
+//       l = r;
+//       r++;
+//       continue;
+//     }
+
+//     const profit = prices[r] - prices[l];
+
+//     if (profit > maxProfit) {
+//       maxProfit = profit;
+//     }
+
+//     r++;
+//   }
+
+//   return maxProfit;
+// };
+
+// #2
+
 const maxProfit = function (prices) {
-  if (prices.length === 1) {
-    return 0;
+  let min = Infinity,
+    max = -Infinity;
+
+  for (let i = 0; i < prices.length; i++) {
+    min = Math.min(min, prices[i]);
+    max = Math.max(max, prices[i] - min);
   }
 
-  let l = 0;
-  let r = 1;
-  let maxProfit = 0;
-
-  while (r < prices.length) {
-    if (prices[l] >= prices[r]) {
-      l = r;
-      r++;
-      continue;
-    }
-
-    const profit = prices[r] - prices[l];
-
-    if (profit > maxProfit) {
-      maxProfit = profit;
-    }
-
-    r++;
-  }
-
-  return maxProfit;
+  return max;
 };
 
 console.log(maxProfit([7, 1, 5, 3, 6, 4])); // 5
