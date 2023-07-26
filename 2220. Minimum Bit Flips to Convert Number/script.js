@@ -30,11 +30,25 @@
 //     }
 // };
 
-const minBitFlips = function (start, goal) {
-    return (start ^ goal)
-        .toString(2)
-        .split('')
-        .reduce((a, b) => a + +b, 0);
+// const minBitFlips = function (start, goal) {
+//     return (start ^ goal)
+//         .toString(2)
+//         .split('')
+//         .reduce((a, b) => a + +b, 0);
+// };
+
+// #2
+
+var minBitFlips = function (start, goal) {
+  let xor = start ^ goal;
+  let count = 0;
+
+  while (xor > 0) {
+    count += xor & 1;
+    xor = xor >> 1;
+  }
+
+  return count;
 };
 
 console.log(minBitFlips(10, 7)); // 3
