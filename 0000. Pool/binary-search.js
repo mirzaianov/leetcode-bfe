@@ -34,13 +34,9 @@ function binarySearch(array, target) {
 
     if (array[mid] === target) return mid;
 
-    if (array[mid] < target) {
-      left = mid + 1;
-    }
+    if (array[mid] < target) left = mid + 1;
 
-    if (array[mid] > target) {
-      right = mid - 1;
-    }
+    if (array[mid] > target) right = mid - 1;
   }
 
   return -1;
