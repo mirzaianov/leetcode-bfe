@@ -21,9 +21,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # Personal
-JS_task_answers-master/
-.vscode/
-.stylelintrc.json
-.stylelintrc.js
+/vscode
+.eslintrc.json
+.prettierrc
 package.json
 package-lock.json
