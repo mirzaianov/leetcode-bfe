@@ -1,8 +1,8 @@
-var countSymmetricIntegers = function (low, high) {
+const countSymmetricIntegers = (low, high) => {
   let count = 0;
 
-  for (let i = low; i <= high; i++) {
-    let toString = i.toString();
+  for (let i = low; i <= high; i += 1) {
+    const toString = i.toString();
 
     if (toString.length % 2 !== 0) continue;
 
@@ -16,11 +16,11 @@ var countSymmetricIntegers = function (low, high) {
       leftSum += +toString[left];
       rightSum += +toString[right];
 
-      left++;
-      right--;
+      left += 1;
+      right -= 1;
     }
 
-    if (leftSum === rightSum) count++;
+    if (leftSum === rightSum) count += 1;
   }
 
   return count;
