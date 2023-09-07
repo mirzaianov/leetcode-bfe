@@ -14,33 +14,21 @@ const findWords = function (words) {
       status = status && row.includes(letter);
     }
 
-    if (status === true) return w;
-    else return null;
+    return status;
   };
 
-  for (let i = 0; i < words.length; i += 1) {
-    const word = words[i];
+  const pushRes = (arr, row) => {
+    for (let i = 0; i < arr.length; i += 1) {
+      const word = arr[i];
+      const checkOne = checkWord(word, row);
 
-    const checkOne = checkWord(word, rowOne);
+      if (checkOne) res.push(word);
+    }
+  };
 
-    if (checkOne !== null) res.push(checkOne);
-  }
-
-  for (let i = 0; i < words.length; i += 1) {
-    const word = words[i];
-
-    const checkTwo = checkWord(word, rowTwo);
-
-    if (checkTwo !== null) res.push(checkTwo);
-  }
-
-  for (let i = 0; i < words.length; i += 1) {
-    const word = words[i];
-
-    const checkThree = checkWord(word, rowThree);
-
-    if (checkThree !== null) res.push(checkThree);
-  }
+  pushRes(words, rowOne);
+  pushRes(words, rowTwo);
+  pushRes(words, rowThree);
 
   return res;
 };
