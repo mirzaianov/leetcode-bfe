@@ -3,7 +3,8 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: 'airbnb-base',
+  extends: ['airbnb-base', 'prettier'],
+  plugins: ['prettier'],
   overrides: [
     {
       env: {
@@ -20,6 +21,13 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'no-restricted-syntax': 0,
     'linebreak-style': ['error', 'windows'],
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
   },
 };
