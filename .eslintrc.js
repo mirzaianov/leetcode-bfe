@@ -22,6 +22,7 @@ module.exports = {
   },
   rules: {
     'no-restricted-syntax': 0,
+    'no-unused-expressions': ['error', { allowTernary: true }],
     'linebreak-style': ['error', 'windows'],
     'prettier/prettier': [
       'error',
