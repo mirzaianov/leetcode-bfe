@@ -68,15 +68,32 @@ const printLinkedListRecursive = (head) => {
 
 // #3
 
+// const reverseList = function (head) {
+//   let cur = head;
+//   let prev = null;
+
+//   while (cur !== null) {
+//     let temp = cur.next;
+//     cur.next = prev;
+//     prev = cur;
+//     cur = temp;
+//   }
+
+//   return prev;
+// };
+
+// #2
+
 const reverseList = function (head) {
-  let cur = head;
+  let curr = head;
   let prev = null;
 
-  while (cur !== null) {
-    let temp = cur.next;
-    cur.next = prev;
-    prev = cur;
-    cur = temp;
+  while (curr) {
+    const temp = curr.next;
+
+    curr.next = prev;
+    prev = curr;
+    curr = temp;
   }
 
   return prev;
