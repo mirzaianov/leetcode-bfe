@@ -10,14 +10,30 @@
  * @return {ListNode}
  */
 
-const deleteDuplicates = function (head) {
-  let cur = head;
+// const deleteDuplicates = function (head) {
+//   let cur = head;
 
-  while (cur && cur.next) {
-    if (cur.val === cur.next.val) {
-      cur.next = cur.next.next;
+//   while (cur && cur.next) {
+//     if (cur.val === cur.next.val) {
+//       cur.next = cur.next.next;
+//     } else {
+//       cur = cur.next;
+//     }
+//   }
+
+//   return head;
+// };
+
+// #2
+
+const deleteDuplicates = function (head) {
+  let curr = head;
+
+  while (curr && curr.next) {
+    if (curr.val === curr.next.val) {
+      curr.next = curr.next.next;
     } else {
-      cur = cur.next;
+      curr = curr.next;
     }
   }
 

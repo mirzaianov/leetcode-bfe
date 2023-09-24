@@ -31,6 +31,30 @@
 
 // #2
 
+class ListNode {
+  constructor(val, next) {
+    this.val = val === undefined ? 0 : val;
+    this.next = next === undefined ? null : next;
+  }
+}
+
+const node11 = new ListNode('1');
+const node12 = new ListNode('2');
+const node13 = new ListNode('4');
+
+const node21 = new ListNode('1');
+const node22 = new ListNode('3');
+const node23 = new ListNode('4');
+
+node11.next = node12;
+node12.next = node13;
+
+node21.next = node22;
+node22.next = node23;
+
+node11;
+node21;
+
 const mergeTwoLists = function (list1, list2) {
   if (!list1) return list2;
   else if (!list2) return list1;
@@ -42,3 +66,5 @@ const mergeTwoLists = function (list1, list2) {
     return list2;
   }
 };
+
+console.log(mergeTwoLists(node11, node21));
