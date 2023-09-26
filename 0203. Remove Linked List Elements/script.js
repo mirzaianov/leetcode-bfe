@@ -53,6 +53,28 @@ const removeElements = function (head, val) {
   return result.next;
 };
 
+// #2
+
+// const removeElements = function (head, val) {
+//   if (!head) return head;
+
+//   let firstNode = new ListNode();
+//   firstNode.next = head;
+//   let curr = firstNode;
+
+//   while (curr.next) {
+//     if (curr.next.val === val) {
+//       curr.next = curr.next.next;
+//     } else {
+//       curr = curr.next;
+//     }
+//   }
+
+//   firstNode = firstNode.next;
+
+//   return firstNode;
+// }
+
 const printLinkedList = (head) => {
   let current = head;
 
