@@ -15,15 +15,3 @@ node1.next = node2;
 node2.next = node3;
 node3.next = node4;
 node4.next = node5;
-
-const removeNodes = function (head) {
-  if (!head) return null;
-
-  head.next = removeNodes(head.next);
-
-  if (head.next && head.val < head.next.val) return head.next;
-
-  return head;
-};
-
-console.log(removeNodes(node1)); // 13 -> 8
