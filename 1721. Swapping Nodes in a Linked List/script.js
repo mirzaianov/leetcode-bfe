@@ -1,23 +1,23 @@
 const swapNodes = function (head, k) {
-  let A = head;
+  let first = head;
 
   for (let i = 1; i < k; i += 1) {
-    A = A.next;
+    first = first.next;
   }
 
-  const K = A;
-  A = A.next;
+  const swap = first;
+  first = first.next;
 
-  let B = head;
+  let second = head;
 
-  while (A) {
-    A = A.next;
-    B = B.next;
+  while (first) {
+    first = first.next;
+    second = second.next;
   }
 
-  const temp = K.val;
-  K.val = B.val;
-  B.val = temp;
+  const temp = swap.val;
+  swap.val = second.val;
+  second.val = temp;
 
   return head;
 };
