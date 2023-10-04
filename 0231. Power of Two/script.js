@@ -1,16 +1,13 @@
-// const isPowerOfTwo = function (n) {
-//     if (n < 1) {
-//         return false;
-//     } else if (n === 1) {
-//         return true;
-//     } else {
-//         return isPowerOfTwo(n / 2);
-//     }
-// };
+const isPowerOfTwo = function (n) {
+  if (n === 1) return true;
+  if (n < 1) return false;
 
-var isPowerOfTwo = function (n) {
-    return Number.isInteger(Math.log2(n));
+  return isPowerOfTwo(n / 2);
 };
+
+// var isPowerOfTwo = function (n) {
+//     return Number.isInteger(Math.log2(n));
+// };
 
 console.log(isPowerOfTwo(0));
 console.log(isPowerOfTwo(1));
