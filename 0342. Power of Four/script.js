@@ -10,16 +10,13 @@
 //     }
 // };
 
-const isPowerOfFour = function (n) {
-    if (n < 1) {
-        return false;
-    }
+const isPowerOfFour = (n) => {
+  const base = 4;
 
-    if (n == 1) {
-        return true;
-    }
+  if (n < 1) return false;
+  if (n === 1) return true;
 
-    return isPowerOfFour(n / 4);
+  return isPowerOfFour(n / base);
 };
 
 console.log(isPowerOfFour(0)); // false
