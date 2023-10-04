@@ -17,16 +17,13 @@
 //     return result === Math.floor(result);
 // };
 
-const isPowerOfThree = function (n) {
-    const base = 2;
+const isPowerOfThree = (n) => {
+  const base = 3;
 
-    if (n < 1) {
-        return false;
-    } else if (n === 1) {
-        return true;
-    } else {
-        return isPowerOfThree(n / base);
-    }
+  if (n < 1) return false;
+  if (n === 1) return true;
+
+  return isPowerOfThree(n / base);
 };
 
 console.log(isPowerOfThree(0)); // false
