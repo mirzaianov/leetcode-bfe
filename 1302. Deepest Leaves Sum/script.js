@@ -18,17 +18,46 @@
 //   }
 // };
 
-var deepestLeavesSum = function (root) {
-  let sumArr = [];
+// var deepestLeavesSum = function (root) {
+//   let sumArr = [];
+
+//   dfs(root, 0);
+
+//   return sumArr.at(-1);
+
+//   function dfs(node, lvl) {
+//     sumArr[lvl] = (sumArr[lvl] || 0) + node.val;
+
+//     if (node.left) dfs(node.left, lvl + 1);
+//     if (node.right) dfs(node.right, lvl + 1);
+//   }
+// };
+
+// #2
+
+const deepestLeavesSum = function (root) {
+  const map = new Map();
+
+  const dfs = (node, lvl) => {
+    if (!node) return null;
+
+    if (!node.left && !node.right) {
+      map.set(lvl, map.get(lvl) + node.val || node.val);
+    }
+
+    dfs(node.left, lvl + 1);
+    dfs(node.right, lvl + 1);
+
+    return node;
+  };
 
   dfs(root, 0);
 
-  return sumArr.at(-1);
+  let max = -Infinity;
 
-  function dfs(node, lvl) {
-    sumArr[lvl] = (sumArr[lvl] || 0) + node.val;
-
-    if (node.left) dfs(node.left, lvl + 1);
-    if (node.right) dfs(node.right, lvl + 1);
+  for (const [key] of map) {
+    max = Math.max(max, key);
   }
+
+  return map.get(max);
 };
