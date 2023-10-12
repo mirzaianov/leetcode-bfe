@@ -10,7 +10,32 @@
 //     return result;
 // };
 
-const maxDepth = function (root) {
+// const maxDepth = function (root) {
+//   if (!root) return 0;
+
+//   return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+// };
+
+// #2
+
+// const maxDepth = (root) => {
+//   let max = 0;
+
+//   const dfs = (node, lvl) => {
+//     if (!node) return;
+
+//     max = Math.max(max, lvl);
+
+//     dfs(node.left, lvl + 1);
+//     dfs(node.right, lvl + 1);
+//   };
+
+//   dfs(root, 1);
+
+//   return max;
+// };
+
+const maxDepth = (root) => {
   if (!root) return 0;
 
   return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
