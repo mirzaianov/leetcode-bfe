@@ -13,24 +13,42 @@
 //   return result;
 // };
 
-var inorderTraversal = function (root) {
-  const result = [];
+// var inorderTraversal = function (root) {
+//   const result = [];
 
-  if (!root) return result;
+//   if (!root) return result;
 
-  const stack = [];
-  let curr = root;
+//   const stack = [];
+//   let curr = root;
 
-  while (curr || stack.length) {
-    if (curr) {
-      stack.push(curr);
-      curr = curr.left;
-    } else {
-      curr = stack.pop();
-      result.push(curr.val);
-      curr = curr.right;
-    }
-  }
+//   while (curr || stack.length) {
+//     if (curr) {
+//       stack.push(curr);
+//       curr = curr.left;
+//     } else {
+//       curr = stack.pop();
+//       result.push(curr.val);
+//       curr = curr.right;
+//     }
+//   }
 
-  return result;
+//   return result;
+// };
+
+// #2
+
+const inorderTraversal = function (root) {
+  const res = [];
+
+  const dfs = (node) => {
+    if (!node) return;
+
+    dfs(node.left);
+    res.push(node.val);
+    dfs(node.right);
+  };
+
+  dfs(root);
+
+  return res;
 };
