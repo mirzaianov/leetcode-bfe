@@ -23,29 +23,51 @@
 //     return true;
 // };
 
-const isAnagram = function (s, t) {
-    if (s.length !== t.length) return false;
+// const isAnagram = function (s, t) {
+//     if (s.length !== t.length) return false;
 
-    const storeS = stringToObj(s),
-        storeT = stringToObj(t);
+//     const storeS = stringToObj(s),
+//         storeT = stringToObj(t);
 
-    for (let i in storeS) {
-        if (storeS[i] !== storeT[i]) {
-            return false;
-        }
-    }
+//     for (let i in storeS) {
+//         if (storeS[i] !== storeT[i]) {
+//             return false;
+//         }
+//     }
 
-    return true;
+//     return true;
 
-    function stringToObj(string) {
-        const object = {};
+//     function stringToObj(string) {
+//         const object = {};
 
-        for (let letter of string) {
-            object[letter] = object[letter] ? object[letter] + 1 : 1;
-        }
+//         for (let letter of string) {
+//             object[letter] = object[letter] ? object[letter] + 1 : 1;
+//         }
 
-        return object;
-    }
+//         return object;
+//     }
+// };
+
+// #2
+
+const isAnagram = (s, t) => {
+  if (s.length !== t.length) return false;
+
+  const map = new Map();
+
+  for (const l of s) {
+    map.set(l, (map.get(l) || 0) + 1);
+  }
+
+  for (const l of t) {
+    if (!map.get(l)) map.set(l, 1);
+    else if (map.get(l) === 1) map.delete(l);
+    else if (map.get(l) > 1) map.set(l, map.get(l) - 1);
+  }
+
+  if (map.size !== 0) return false;
+
+  return true;
 };
 
 console.log(isAnagram('anagram', 'nagaram')); // true
