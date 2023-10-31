@@ -25,16 +25,18 @@
 //   return visited.has(destination);
 // };
 
-const validPath = (n, edges, source, destination) => {
-  const buildGraph = (array) => {
-    const graph = {};
+// #2
 
-    for (const [a, b] of array) {
-      graph[a] ? graph[a].push(b) : (graph[a] = [b]);
-      graph[b] ? graph[b].push(a) : (graph[b] = [a]);
+const validPath = (n, edges, source, destination) => {
+  const buildGraph = (edgesArray) => {
+    const newGraph = {};
+
+    for (const [a, b] of edgesArray) {
+      newGraph[a] ? newGraph[a].push(b) : (newGraph[a] = [b]);
+      newGraph[b] ? newGraph[b].push(a) : (newGraph[b] = [a]);
     }
 
-    return graph;
+    return newGraph;
   };
 
   const myGraph = buildGraph(edges);
