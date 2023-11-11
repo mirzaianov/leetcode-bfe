@@ -44,3 +44,6 @@ lerna-debug.log*
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+
+# custom
+package-lock.json
