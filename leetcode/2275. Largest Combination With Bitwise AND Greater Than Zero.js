@@ -1,7 +1,7 @@
 const largestCombination = (candidates) => {
   let max = -Infinity;
 
-  for (let i = 1; i <= 2 ** 31; i *= 2) {
+  for (let i = 1; i <= Number.MAX_SAFE_INTEGER; i *= 2) {
     let bit = 0;
 
     for (const el of candidates) {
