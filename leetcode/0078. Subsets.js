@@ -18,7 +18,7 @@
 
 // #2
 
-var subsets = function (nums, depth = 0, subset = [], results = []) {
+const subsets = function (nums, depth = 0, subset = [], results = []) {
   if (depth === nums.length) {
     results.push(subset);
   } else {

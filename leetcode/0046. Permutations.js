@@ -39,31 +39,28 @@
 
 // #2
 
-var permute = function (nums) {
-  const result = []; // Initialize an empty array to store all the permutations
+const permute = function (nums) {
+  const result = [];
 
-  backtrack([]); // Call the backtrack function with an empty array to store the current permutation
-
-  return result; // Return the array of all permutations
-
-  // Backtracking function to find all permutations of an array of distinct integers
-  function backtrack(curr) {
-    // If the current permutation has the same length as the input array, i.e., we have used all the integers, add it to the result array and return
+  const backtrack = (curr) => {
     if (curr.length === nums.length) {
-      result.push(curr.slice()); // Make a copy of the current permutation and add it to the result array
+      result.push(curr.slice());
 
       return;
     }
 
-    // For each integer in the input array that hasn't been used in the current permutation, add it to the permutation and continue exploring
-    for (let i = 0; i < nums.length; i++) {
+    for (let i = 0; i < nums.length; i += 1) {
       if (!curr.includes(nums[i])) {
         curr.push(nums[i]);
         backtrack(curr);
-        curr.pop(); // Remove the last integer from the current permutation to backtrack and explore other possibilities
+        curr.pop();
       }
     }
-  }
+  };
+
+  backtrack([]);
+
+  return result;
 };
 
 console.log(permute([1, 2, 3])); // [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
