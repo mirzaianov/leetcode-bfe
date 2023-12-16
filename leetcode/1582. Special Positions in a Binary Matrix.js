@@ -10,13 +10,7 @@ const numSpecial = (mat) => {
           colSum += mat[k][j];
         }
 
-        let rowSum = 0;
-
-        for (let k = 0; k < mat.length; k += 1) {
-          console.log('mat[i][k] 🚀', mat[i][k]);
-          rowSum += mat[i][k] || 0;
-        }
-        rowSum;
+        const rowSum = mat[i].reduce((acc, item) => acc + item);
 
         if (colSum === 1 && rowSum === 1) count += 1;
       }
