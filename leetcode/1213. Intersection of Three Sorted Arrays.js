@@ -8,8 +8,8 @@ const arraysIntersection = (arr1, arr2, arr3) => {
   };
 
   toMap(arr1, store);
-  toMap(arr2, arr1);
-  toMap(arr3, arr2);
+  toMap(arr2, store);
+  toMap(arr3, store);
 
   const res = [];
 
