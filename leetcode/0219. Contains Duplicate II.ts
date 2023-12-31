@@ -1,32 +1,19 @@
-// const containsNearbyDuplicate = function (nums, k) {
-//   if (nums.length <= 1) return false;
+const containsNearbyDuplicate = (nums: number[], k: number): boolean => {
+  const set = new Set<number>();
+  let left: number = 0;
+  let right: number = 0;
 
-//   for (let i = 0; i < nums.length; i++) {
-//     for (let j = i + 1; j <= i + k; j++) {
-//       if (nums[i] === nums[j]) {
-//         return true;
-//       }
-//     }
-//   }
+  while (right < nums.length) {
+    if (set.has(nums[right])) return true;
 
-//   return false;
-// };
+    set.add(nums[right]);
 
-const containsNearbyDuplicate = function (nums, k) {
-  const set = new Set();
-  let l = 0;
-
-  for (let r = 0; r < nums.length; r++) {
-    if (set.has(nums[r])) {
-      return true;
+    if (right - left === k) {
+      set.delete(nums[left]);
+      left += 1;
     }
 
-    set.add(nums[r]);
-
-    if (r - l >= k) {
-      set.delete(nums[l]);
-      l++;
-    }
+    right += 1;
   }
 
   return false;
