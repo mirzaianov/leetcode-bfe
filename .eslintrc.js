@@ -3,14 +3,14 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['airbnb-base', 'prettier'],
+  extends: ['airbnb-base', 'airbnb-typescript/base', 'prettier'],
   plugins: ['prettier'],
   overrides: [
     {
       env: {
         node: true,
       },
-      files: ['.eslintrc.{js,cjs}'],
+      files: ['.eslintrc.{js,cjs,}'],
       parserOptions: {
         sourceType: 'script',
       },
@@ -19,6 +19,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
+    project: './tsconfig.json',
   },
   rules: {
     'no-restricted-syntax': 0,
