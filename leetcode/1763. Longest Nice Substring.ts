@@ -1,18 +1,15 @@
 const longestNiceSubstring = (s: string): string => {
   if (s.length < 2) return '';
 
-  const arr: string[] = [...s];
-  const set = new Set<string>(arr);
+  const chars = new Set(s);
 
-  for (let i: number = 0; i < arr.length; i += 1) {
-    const curr: string = arr[i];
+  for (let i = 0; i < s.length; i += 1) {
+    if (!chars.has(s[i].toUpperCase()) || !chars.has(s[i].toLowerCase())) {
+      const left = longestNiceSubstring(s.substring(0, i));
+      const right = longestNiceSubstring(s.substring(i + 1));
 
-    if (set.has(curr.toUpperCase()) && set.has(curr.toLowerCase())) continue;
-
-    const sub1: string = longestNiceSubstring(s.substring(0, i));
-    const sub2: string = longestNiceSubstring(s.substring(i + 1));
-
-    return sub1.length >= sub2.length ? sub1 : sub2;
+      return left.length >= right.length ? left : right;
+    }
   }
 
   return s;
