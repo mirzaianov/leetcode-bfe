@@ -7,7 +7,7 @@ const makeEqual = (words: string[]): boolean => {
 
   for (const word of words) {
     for (const letter of word) {
-      map.set(letter, map.get(letter) + 1 || 1);
+      map.set(letter, map.get(letter)! + 1 || 1);
     }
   }
 
