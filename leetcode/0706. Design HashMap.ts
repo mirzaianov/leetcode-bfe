@@ -1,5 +1,5 @@
 class MyHashMap {
-  map = {};
+  map: Record<number, number>;
 
   constructor() {
     this.map = {};
