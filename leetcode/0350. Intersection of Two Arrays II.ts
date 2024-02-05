@@ -9,7 +9,7 @@ const intersect = (nums1: number[], nums2: number[]): number[] => {
 
   for (const num of nums2) {
     if (map.has(num) && map.get(num) !== 0) {
-      map.set(num, map.get(num) - 1);
+      map.set(num, map.get(num)! - 1);
       res.push(num);
     }
   }
