@@ -8,8 +8,6 @@ const groupAnagrams = (strs: string[]): string[][] => {
       .join('');
 
     if (map.has(sortedStr)) {
-      const current = map.get(sortedStr)!;
-
       map.set(sortedStr, [...map.get(sortedStr)!, str]);
     } else {
       map.set(sortedStr, [str]);
