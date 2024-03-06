@@ -9,12 +9,24 @@ class MyQueue {
     this.queue.push(x);
   }
 
-  pop(): number {
-    return this.queue.shift()!;
+  pop(): number | string {
+    const first: number | undefined = this.queue.shift();
+
+    if (first === undefined) {
+      return `can't pop from an empty queue`;
+    }
+
+    return first;
   }
 
-  peek(): number {
-    return this.queue[0];
+  peek(): number | string {
+    const first: number | undefined = this.queue[0];
+
+    if (first === undefined) {
+      return `can't peek from an empty queue`;
+    }
+
+    return first;
   }
 
   empty(): boolean {
