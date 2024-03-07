@@ -19,7 +19,7 @@ const decodeString = (s: string): string => {
 
       res = prevRes + res.repeat(prevMult);
     } else if (!Number.isNaN(Number(l))) {
-      mult = Number(l);
+      mult = mult * 10 + Number(l);
     } else {
       res += l;
     }
