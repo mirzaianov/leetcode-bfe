@@ -17,3 +17,5 @@ const mySqrt = (x: number): number => {
 
   return left - 1;
 };
+
+export default mySqrt;
