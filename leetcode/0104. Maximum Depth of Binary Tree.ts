@@ -13,7 +13,7 @@ class TreeNode {
   }
 }
 
-const maxDepth = (root: TreeNode | null, depth: number = 0): number => {
+const maxDepth = (root: TreeNode | null): number => {
   if (!root) return 0;
 
   const left = maxDepth(root.left);
