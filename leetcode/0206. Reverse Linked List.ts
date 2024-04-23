@@ -1,5 +1,3 @@
-//
-
 class ListNode {
   val: number;
 
@@ -11,19 +9,30 @@ class ListNode {
   }
 }
 
+// const reverseList = (head: ListNode | null): ListNode | null => {
+//   let curr: ListNode | null = head;
+//   let prev: ListNode | null = null;
+
+//   while (curr) {
+//     const temp = curr.next;
+
+//     curr.next = prev;
+//     prev = curr;
+//     curr = temp;
+//   }
+
+//   return prev;
+// };
+
 const reverseList = (head: ListNode | null): ListNode | null => {
-  let curr: ListNode | null = head;
-  let prev: ListNode | null = null;
+  if (!head || !head.next) return head;
 
-  while (curr) {
-    const temp = curr.next;
+  const rev = reverseList(head.next);
 
-    curr.next = prev;
-    prev = curr;
-    curr = temp;
-  }
+  head.next.next = head;
+  head.next = null;
 
-  return prev;
+  return rev;
 };
 
 export default reverseList;
