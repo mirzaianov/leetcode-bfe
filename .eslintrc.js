@@ -32,5 +32,6 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    'max-classes-per-file': 0,
   },
 };
