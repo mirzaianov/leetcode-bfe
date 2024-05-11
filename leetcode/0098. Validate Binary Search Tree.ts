@@ -12,14 +12,16 @@ class TreeNode {
   }
 }
 
-const valid = (node: TreeNode | null, left: number, right: number): boolean => {
-  if (!node) return true;
+const isValidBST = (root: TreeNode | null): boolean => {
+  const valid = (node: TreeNode | null, left: number, right: number): boolean => {
+    if (!node) return true;
 
-  if (node.val >= right || node.val <= left) return false;
+    if (node.val >= right || node.val <= left) return false;
 
-  return valid(node.left, left, node.val) && valid(node.right, node.val, right);
+    return valid(node.left, left, node.val) && valid(node.right, node.val, right);
+  };
+
+  valid(root, -Infinity, Infinity);
 };
-
-const isValidBST = (root: TreeNode | null): boolean => valid(root, -Infinity, Infinity);
 
 export default isValidBST;
