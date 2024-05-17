@@ -20,3 +20,5 @@ const generateParenthesis = (n: number): string[] => {
 
   return res;
 };
+
+export default generateParenthesis;
