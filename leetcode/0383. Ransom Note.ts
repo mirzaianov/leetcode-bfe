@@ -1,15 +1,22 @@
-const canConstruct = (ransomNote: string, magazine: string): boolean => {
+const toMap = (string: string): Map<string, number> => {
   const map = new Map<string, number>();
 
-  for (const letter of ransomNote) {
+  for (const letter of string) {
     map.set(letter, (map.get(letter) || 0) + 1);
   }
 
-  for (const letter of magazine) {
-    if (map.get(letter)) map.set(letter, map.get(letter)! - 1);
-    if (map.get(letter) === 0) map.delete(letter);
-    if (map.size === 0) return true;
+  return map;
+};
+
+const canConstruct = (ransomNote: string, magazine: string): boolean => {
+  const mappedR: Map<string, number> = toMap(ransomNote);
+  const mappedM: Map<string, number> = toMap(magazine);
+
+  for (const [key, value] of mappedR) {
+    if (!mappedM.has(key) || mappedM.get(key)! < value) return false;
   }
 
-  return false;
+  return true;
 };
+
+export default canConstruct;

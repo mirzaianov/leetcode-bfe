@@ -34,6 +34,8 @@ class MyQueue {
   }
 }
 
+export default MyQueue;
+
 /**
  * Your MyQueue object will be instantiated and called as such:
  * var obj = new MyQueue()
