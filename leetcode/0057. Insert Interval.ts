@@ -5,9 +5,7 @@ const insert = (intervals: number[][], newInterval: number[]): number[][] => {
     if (newInterval[1] < intervals[i][0]) {
       res.push(newInterval);
       return [...res, ...intervals.slice(i)];
-    }
-
-    if (newInterval[0] > intervals[i][1]) {
+    } else if (newInterval[0] > intervals[i][1]) {
       res.push(intervals[i]);
     } else {
       newInterval = [
