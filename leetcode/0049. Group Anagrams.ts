@@ -1,21 +1,20 @@
 const groupAnagrams = (strs: string[]): string[][] => {
   const map = new Map<string, string[]>();
 
-  for (const str of strs) {
-    const sortedStr: string = str
+  for (const s of strs) {
+    const key: string = s
       .split('')
-      .sort((a, b) => (a > b ? -1 : 1))
+      .sort((a, b) => (a < b ? 1 : -1))
       .join('');
 
-    if (map.has(sortedStr)) {
-      map.set(sortedStr, [...map.get(sortedStr)!, str]);
+    if (map.has(key)) {
+      map.set(key, [...map.get(key)!, s]);
     } else {
-      map.set(sortedStr, [str]);
+      map.set(key, [s]);
     }
   }
 
   return [...map.values()];
 };
 
-console.log(groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat'])); // [["bat"],["nat","tan"],["ate","eat","tea"]]
-console.log(groupAnagrams(['', ''])); // [["bat"],["nat","tan"],["ate","eat","tea"]]
+export default groupAnagrams;
