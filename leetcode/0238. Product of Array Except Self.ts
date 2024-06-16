@@ -9,7 +9,7 @@ const productExceptSelf = (nums: number[]): number[] => {
 
   let right = 1;
 
-  for (let i = res.length - 1; i >= 0; i -= 1) {
+  for (let i = nums.length - 1; i >= 0; i -= 1) {
     res[i] *= right;
     right *= nums[i];
   }
