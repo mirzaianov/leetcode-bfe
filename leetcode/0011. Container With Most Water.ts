@@ -1,15 +1,19 @@
 const maxArea = (height: number[]): number => {
   let max = 0;
-  let left = 0;
-  let right: number = height.length - 1;
+  let l = 0;
+  let r: number = height.length - 1;
 
-  while (left < right) {
-    const minHeight: number = Math.min(height[left], height[right]);
-    const square: number = minHeight * (right - left);
+  while (l < r) {
+    const dist: number = r - l;
+    const minHeight: number = Math.min(height[l], height[r]);
+    const square: number = dist * minHeight;
 
     max = Math.max(max, square);
-    height[left] <= height[right] ? (left += 1) : (right -= 1);
+
+    height[l] <= height[r] ? (l += 1) : (r -= 1);
   }
 
   return max;
 };
+
+export default maxArea;
