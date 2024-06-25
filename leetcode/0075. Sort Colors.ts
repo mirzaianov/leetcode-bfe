@@ -1,54 +1,24 @@
-// #1
-
-// const sortColors = (nums: number[]): void => {
-//   const max: number = Math.max(...nums);
-//   const counts: number[] = Array(max + 1).fill(0);
-
-//   for (const num of nums) {
-//     counts[num] += 1;
-//   }
-
-//   let startingIndex = 0;
-
-//   for (let i = 0; i < counts.length; i += 1) {
-//     const count = counts[i];
-//     counts[i] = startingIndex;
-//     startingIndex += count;
-//   }
-
-//   const sortedArray: number[] = Array(nums.length);
-
-//   for (const num of nums) {
-//     sortedArray[counts[num]] = num;
-//     counts[num] += 1;
-//   }
-
-//   for (let i = 0; i < nums.length; i += 1) {
-//     nums[i] = sortedArray[i];
-//   }
-// };
-
-// #2
+const swap = (arr: number[], i: number, j: number): void => {
+  [arr[i], arr[j]] = [arr[j], arr[i]];
+};
 
 const sortColors = (nums: number[]): void => {
-  let left = 0;
-  let right = nums.length - 1;
-  let current = left;
+  let l = 0;
+  let r = nums.length - 1;
+  let cur = l;
 
-  const swap = (i: number, j: number): void => {
-    [nums[i], nums[j]] = [nums[j], nums[i]];
-  };
-
-  while (current <= right) {
-    if (nums[current] === 0) {
-      swap(left, current);
-      left += 1;
-      current += 1;
-    } else if (nums[current] === 2) {
-      swap(right, current);
-      right -= 1;
+  while (cur <= r) {
+    if (nums[cur] === 0) {
+      swap(nums, l, cur);
+      l += 1;
+      cur += 1;
+    } else if (nums[cur] === 2) {
+      swap(nums, r, cur);
+      r -= 1;
     } else {
-      current += 1;
+      cur += 1;
     }
   }
 };
+
+export default sortColors;
