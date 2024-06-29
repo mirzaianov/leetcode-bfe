@@ -12,37 +12,22 @@ class ListNode {
 const removeNthFromEnd = (head: ListNode | null, n: number): ListNode | null => {
   let slow = head;
   let fast = head;
+  let i = 0;
 
-  for (let i = 0; i < n; i += 1) {
-    if (fast) {
-      fast = fast.next;
-    } else {
-      throw new Error('n is greater than the length of the list');
-    }
-  }
-
-  if (!fast) {
-    if (head) {
-      return head.next;
-    }
-
-    throw new Error('Head is null');
-  }
-
-  while (fast.next) {
+  while (i < n && fast) {
     fast = fast.next;
+    i += 1;
+  }
 
-    if (slow) {
-      slow = slow.next;
-    } else {
-      throw new Error('Slow is null');
-    }
+  if (!fast && slow) return slow.next;
+
+  while (slow && fast && fast.next) {
+    fast = fast.next;
+    slow = slow.next;
   }
 
   if (slow && slow.next) {
     slow.next = slow.next.next;
-  } else {
-    throw new Error('Slow or Slow.next is null');
   }
 
   return head;
