@@ -1,4 +1,4 @@
-# leetcode.com & bigfrontend.dev solutions
+# A collection of leetcode.com & bigfrontend.dev solutions
 
 Hi!
 
