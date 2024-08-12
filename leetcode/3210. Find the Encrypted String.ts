@@ -5,7 +5,7 @@ const getEncryptedString = (s: string, k: number): string => {
 
   if (k > len) k %= len;
 
-  return s.slice(k) + s.substring(0, k);
+  return s.slice(k) + s.slice(0, k);
 };
 
 export default getEncryptedString;
