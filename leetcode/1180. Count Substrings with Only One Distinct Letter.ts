@@ -1,4 +1,4 @@
-const countLetters = (s) => {
+const countLetters = (s: string): number => {
   let count = 0;
   let i = 0;
 
@@ -18,4 +18,4 @@ const countLetters = (s) => {
   return count;
 };
 
-console.log(countLetters('aabb')); // 6
+export default countLetters;
