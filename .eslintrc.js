@@ -24,6 +24,7 @@ module.exports = {
   rules: {
     'no-restricted-syntax': 0,
     'no-unused-expressions': ['error', { allowTernary: true }],
+    'no-param-reassign': ['error', { props: false }],
     'linebreak-style': ['error', 'windows'],
     'no-bitwise': 0,
     'prettier/prettier': [
