@@ -1,5 +1,3 @@
-//
-
 const reverseString = (s: string[]): void => {
   let l = 0;
   let r: number = s.length - 1;
