@@ -1,5 +1,5 @@
-var sortString = function (s) {
-  let arr = s.split('').sort();
+const sortString = (s: string): string => {
+  let arr: string[] = s.split('').sort();
   let res = '';
 
   while (arr.length) {
@@ -19,5 +19,4 @@ var sortString = function (s) {
   return res;
 };
 
-console.log(sortString('ccccaaaabbbb')); // "abccbaabccba"
-console.log(sortString('rat')); // "art"
+export default sortString;
