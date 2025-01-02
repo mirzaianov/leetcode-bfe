@@ -1,8 +1,8 @@
 const isPowerOfTwo = (n: number): boolean => {
-  if (n === 1) return true;
-  if (n < 1) return false;
+  const base = 2;
+  const log: number = Math.log10(n) / Math.log10(base);
 
-  return isPowerOfTwo(n / 2);
+  return log % 1 === 0;
 };
 
 export default isPowerOfTwo;
