@@ -10,8 +10,4 @@ function curry(fn) {
   };
 }
 
-const curriedJoin = curry(curry);
-
-console.log(curriedJoin(1, 2, 3)); // '1_2_3'
-console.log(curriedJoin(1)(2, 3)); // '1_2_3'
-console.log(curriedJoin(1, 2)(3)); // '1_2_3'
+export default curry;
