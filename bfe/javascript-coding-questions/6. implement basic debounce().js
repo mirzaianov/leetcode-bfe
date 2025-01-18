@@ -6,3 +6,5 @@ function debounce(func, wait) {
     timer = setTimeout(() => func(...args), wait);
   };
 }
+
+export default debounce;
