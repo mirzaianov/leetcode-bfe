@@ -1,6 +1,6 @@
 const sortedSquares = (nums: number[]): number[] => {
   const n = nums.length;
-  const res: number[] = new Array(n);
+  const res: number[] = new Array(n).fill(0);
   let left = 0;
   let right = n - 1;
 
@@ -20,5 +20,4 @@ const sortedSquares = (nums: number[]): number[] => {
   return res;
 };
 
-console.log(sortedSquares([-4, -1, 0, 3, 10])); // [0,1,9,16,100]
-console.log(sortedSquares([-7, -3, 2, 3, 11])); // [4,9,9,49,121]
+export default sortedSquares;
