@@ -1,31 +1,40 @@
 class MinStack {
-  stack: number[];
+  arr: number[];
 
-  min: number;
+  minStack: number[];
 
   constructor() {
-    this.stack = [];
-    this.min = Infinity;
+    this.arr = [];
+    this.minStack = [];
   }
 
   push(val: number): void {
-    this.stack.push(val);
-    this.min = Math.min(this.min, val);
+    this.arr.push(val);
+
+    if (!this.minStack.length || (this.minStack.length && this.getMin() >= val)) {
+      this.minStack.push(val);
+    }
   }
 
   pop(): void {
-    const last = this.stack.pop();
+    const last: number | undefined = this.arr.pop();
 
-    if (this.min === last) {
-      this.min = Math.min(...this.stack);
+    if (last !== undefined && last === this.getMin()) {
+      this.minStack.pop();
     }
   }
 
   top(): number {
-    return this.stack[this.stack.length - 1];
+    const last: number | undefined = this.arr.at(-1);
+
+    return last || 0;
   }
 
   getMin(): number {
-    return this.min ?? null;
+    const last: number | undefined = this.minStack.at(-1);
+
+    return last || 0;
   }
 }
+
+export default MinStack;
