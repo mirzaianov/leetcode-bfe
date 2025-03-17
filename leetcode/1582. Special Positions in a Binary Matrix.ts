@@ -1,14 +1,28 @@
-const canMakeArithmeticProgression = (arr: number[]): boolean => {
-  if (arr.length < 3) return true;
+const numSpecial = (mat: number[][]): number => {
+  const m = mat.length;
+  const n = mat[0].length;
 
-  const sortedArr: number[] = [...arr].sort((a, b) => a - b);
-  const diff: number = sortedArr[1] - sortedArr[0];
+  const rowSums = new Array(m).fill(0);
+  const colSums = new Array(n).fill(0);
 
-  for (let i = 2; i < sortedArr.length; i += 1) {
-    if (sortedArr[i] - sortedArr[i - 1] !== diff) return false;
+  for (let i = 0; i < m; i += 1) {
+    for (let j = 0; j < n; j += 1) {
+      if (mat[i][j] === 1) {
+        rowSums[i] += 1;
+        colSums[j] += 1;
+      }
+    }
   }
 
-  return true;
+  let count = 0;
+
+  for (let i = 0; i < m; i += 1) {
+    for (let j = 0; j < n; j += 1) {
+      if (mat[i][j] === 1 && rowSums[i] === 1 && colSums[j] === 1) count += 1;
+    }
+  }
+
+  return count;
 };
 
-export default canMakeArithmeticProgression;
+export default numSpecial;
