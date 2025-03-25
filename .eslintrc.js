@@ -34,5 +34,6 @@ module.exports = {
       },
     ],
     'max-classes-per-file': 0,
+    'no-continue': 0,
   },
 };
