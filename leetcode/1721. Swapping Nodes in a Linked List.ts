@@ -30,10 +30,7 @@ const swapNodes = (head: ListNode | null, k: number): ListNode | null => {
   }
 
   if (swap && second) {
-    const temp: number = swap.val;
-
-    swap.val = second.val;
-    second.val = temp;
+    [swap.val, second.val] = [second.val, swap.val];
   }
 
   return head;
