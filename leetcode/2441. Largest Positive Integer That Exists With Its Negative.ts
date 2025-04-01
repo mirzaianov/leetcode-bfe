@@ -1,5 +1,5 @@
-const findMaxK = (nums) => {
-  const set = new Set();
+const findMaxK = (nums: number[]): number => {
+  const set = new Set<number>();
   let max = -1;
 
   for (const num of nums) {
@@ -10,3 +10,5 @@ const findMaxK = (nums) => {
 
   return max;
 };
+
+export default findMaxK;
