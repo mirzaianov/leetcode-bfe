@@ -1,12 +1,12 @@
 class MyHashSet {
-  set: Record<number, number>;
+  set: Record<string, boolean>;
 
   constructor() {
     this.set = {};
   }
 
   add(key: number): void {
-    this.set[key] = key;
+    this.set[key] = true;
   }
 
   remove(key: number): void {
@@ -17,6 +17,8 @@ class MyHashSet {
     return this.set[key] !== undefined;
   }
 }
+
+export default MyHashSet;
 
 /**
  * Your MyHashSet object will be instantiated and called as such:
