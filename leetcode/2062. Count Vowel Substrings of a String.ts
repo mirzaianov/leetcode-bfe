@@ -1,7 +1,7 @@
-const countVowelSubstrings = (word) => {
-  const len = word.length;
-  const vowels = new Set(`aeiou`);
-  const set = new Set();
+const countVowelSubstrings = (word: string): number => {
+  const len: number = word.length;
+  const vowels = new Set<string>(`aeiou`);
+  const set = new Set<string>();
   let count = 0;
 
   for (let i = 0; i < len; i += 1) {
@@ -25,3 +25,5 @@ const countVowelSubstrings = (word) => {
 
   return count;
 };
+
+export default countVowelSubstrings;
