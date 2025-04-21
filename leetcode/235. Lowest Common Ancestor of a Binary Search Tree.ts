@@ -17,11 +17,12 @@ const lowestCommonAncestor = (
   p: TreeNode | null,
   q: TreeNode | null,
 ): TreeNode | null => {
-  while (root) {
-    if (p.val < root.val && q.val < root.val) root = root.left;
-    else if (p.val > root.val && q.val > root.val) root = root.right;
-    else return root;
-  }
+  if (!root) return null;
+
+  if (p && p.val > root.val && q && q.val > root.val) return lowestCommonAncestor(root.right, p, q);
+  if (p && p.val < root.val && q && q.val < root.val) return lowestCommonAncestor(root.left, p, q);
+
+  return root;
 };
 
 export default lowestCommonAncestor;
