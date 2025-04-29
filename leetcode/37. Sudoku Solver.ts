@@ -1,4 +1,4 @@
-function isValid(board: string[][], row: number, col: number, num: string): boolean {
+const isValid = (board: string[][], row: number, col: number, num: string): boolean => {
   for (let i = 0; i < 9; i += 1) {
     if (board[i][col] === num) return false;
     if (board[row][i] === num) return false;
@@ -9,9 +9,9 @@ function isValid(board: string[][], row: number, col: number, num: string): bool
   }
 
   return true;
-}
+};
 
-function solve(board: string[][]): boolean {
+const solve = (board: string[][]): boolean => {
   for (let i = 0; i < 9; i += 1) {
     for (let j = 0; j < 9; j += 1) {
       if (board[i][j] === '.') {
@@ -31,10 +31,10 @@ function solve(board: string[][]): boolean {
     }
   }
   return true;
-}
+};
 
-function solveSudoku(board: string[][]): void {
+const solveSudoku = (board: string[][]): void => {
   solve(board);
-}
+};
 
 export default solveSudoku;
