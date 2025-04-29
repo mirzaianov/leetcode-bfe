@@ -8,16 +8,20 @@
  */
 
 const guessNumber = (n: number): number => {
-  let left = 1;
-  let right: number = n;
+  let l = 1;
+  let r: number = n;
 
-  while (left <= right) {
-    const mid: number = Math.floor((left + right) / 2);
+  while (l <= r) {
+    const m: number = l + Math.floor((r - l) / 2);
 
-    if (guess(mid) === 0) return mid;
-    if (guess(mid) === -1) right = mid - 1;
-    if (guess(mid) === 1) left = mid + 1;
+    if (guess(m) === 0) return m;
+
+    if (guess(m) === -1) r = m - 1;
+
+    if (guess(m) === 1) l = m + 1;
   }
+
+  return -1;
 };
 
 export default guessNumber;
