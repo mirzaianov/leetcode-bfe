@@ -9,10 +9,8 @@ class ListNode {
   }
 }
 
-function oddEvenList(head: ListNode | null): ListNode | null {
-  if (!head) {
-    return null;
-  }
+const oddEvenList = (head: ListNode | null): ListNode | null => {
+  if (!head) return null;
 
   const evenHead: ListNode | null = head.next;
 
@@ -29,6 +27,6 @@ function oddEvenList(head: ListNode | null): ListNode | null {
   odd.next = evenHead;
 
   return head;
-}
+};
 
 export default oddEvenList;
