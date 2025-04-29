@@ -1,4 +1,4 @@
-function distinctDifferenceArray(nums: number[]): number[] {
+const distinctDifferenceArray = (nums: number[]): number[] => {
   const n = nums.length;
   const result: number[] = new Array(n);
   const prefixSet: Set<number> = new Set();
@@ -19,6 +19,6 @@ function distinctDifferenceArray(nums: number[]): number[] {
   }
 
   return result;
-}
+};
 
 export default distinctDifferenceArray;
