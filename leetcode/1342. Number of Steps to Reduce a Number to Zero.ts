@@ -1,4 +1,4 @@
-function numberOfSteps(num: number): number {
+const numberOfSteps = (num: number): number => {
   let count = 0;
 
   while (num) {
@@ -7,4 +7,6 @@ function numberOfSteps(num: number): number {
   }
 
   return count;
-}
+};
+
+export default numberOfSteps;
