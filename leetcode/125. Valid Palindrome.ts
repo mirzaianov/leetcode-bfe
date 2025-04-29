@@ -1,26 +1,25 @@
-function isPalindrome(s: string): boolean {
-  const chars = `abcdefghijklmnopqrstuvwxyz0123456789`;
-  let cleanedS = '';
+const isPalindrome = (s: string): boolean => {
+  const pattern: RegExp = /[A-Z0-9]/;
+  let l = 0;
+  let r: number = s.length - 1;
 
-  for (const l of s) {
-    const current = l.toLowerCase();
+  while (l <= r) {
+    const left: string = s[l].toUpperCase();
+    const right: string = s[r].toUpperCase();
 
-    if (chars.includes(current)) cleanedS += current;
-  }
+    if (!left.match(pattern)) {
+      l += 1;
+    } else if (!right.match(pattern)) {
+      r -= 1;
+    } else {
+      if (left !== right) return false;
 
-  let left = 0;
-  let right = cleanedS.length - 1;
-
-  while (left <= right) {
-    if (cleanedS[left] !== cleanedS[right]) return false;
-
-    left += 1;
-    right -= 1;
+      l += 1;
+      r -= 1;
+    }
   }
 
   return true;
-}
+};
 
-console.log(isPalindrome('A man, a plan, a canal: Panama')); // true
-console.log(isPalindrome('race a car')); // false
-console.log(isPalindrome(' ')); // true
+export default isPalindrome;
