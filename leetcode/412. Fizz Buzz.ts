@@ -1,4 +1,4 @@
-function fizzBuzz(n: number): string[] {
+const fizzBuzz = (n: number): string[] => {
   const result: string[] = [];
 
   for (let i = 1; i <= n; i += 1) {
@@ -9,4 +9,6 @@ function fizzBuzz(n: number): string[] {
   }
 
   return result;
-}
+};
+
+export default fizzBuzz;
