@@ -1,4 +1,4 @@
-function maximumWealth(accounts: number[][]): number {
+const maximumWealth = (accounts: number[][]): number => {
   let max = -Infinity;
 
   for (const account of accounts) {
@@ -8,4 +8,6 @@ function maximumWealth(accounts: number[][]): number {
   }
 
   return max;
-}
+};
+
+export default maximumWealth;
