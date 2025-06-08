@@ -7,5 +7,6 @@
   "bracketSpacing": true,
   "arrowParens": "always",
   "htmlWhitespaceSensitivity": "strict",
-  "singleAttributePerLine": true
+  "singleAttributePerLine": true,
+  "endOfLine": "auto"
 }
