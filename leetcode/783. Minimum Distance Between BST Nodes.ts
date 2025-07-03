@@ -16,7 +16,7 @@ const minDiffInBST = (root: TreeNode | null): number => {
   let min = Infinity;
   let prev: TreeNode | null = null;
 
-  const dfs = (node: TreeNode | null) => {
+  const dfs = (node: TreeNode | null): void => {
     if (!node) return;
 
     dfs(node.left);
