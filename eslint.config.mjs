@@ -26,7 +26,7 @@ const jsConfig = [
     name: 'eslint/config',
     rules: {
       'no-restricted-syntax': 'off',
-      'no-unused-expressions': ['error', { allowTernary: true }],
+      'no-unused-expressions': 'off',
       'no-param-reassign': 'off',
       'linebreak-style': ['error', 'windows'],
       'no-bitwise': 'off',
@@ -48,6 +48,11 @@ const typescriptConfig = [
   plugins.typescriptEslint,
   // Airbnb Base TypeScript Config
   ...configs.base.typescript,
+  {
+    rules: {
+      '@typescript-eslint/no-unused-expressions': ['error', { allowTernary: true }],
+    },
+  },
 ];
 
 const prettierConfig = [
