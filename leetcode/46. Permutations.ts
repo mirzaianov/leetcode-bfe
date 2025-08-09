@@ -1,25 +1,29 @@
 const permute = (nums: number[]): number[][] => {
   const res: number[][] = [];
+  const curr: number[] = [];
+  const selected: boolean[] = new Array(nums.length).fill(false);
 
-  const backtrack = (arr: number[]): void => {
-    if (nums.length === arr.length) {
-      res.push(arr.slice());
+  const backtrack = (i: number): void => {
+    if (curr.length === nums.length) {
+      res.push([...curr]);
+
+      return;
     }
 
-    for (let i = 0; i < nums.length; i += 1) {
-      const curr: number = nums[i];
+    for (let j = 0; j < nums.length; j += 1) {
+      if (!selected[j]) {
+        selected[j] = true;
+        curr.push(nums[j]);
 
-      if (!arr.includes(curr)) {
-        arr.push(curr);
+        backtrack(i + 1);
 
-        backtrack(arr);
-
-        arr.pop();
+        selected[j] = false;
+        curr.pop();
       }
     }
   };
 
-  backtrack([]);
+  backtrack(0);
 
   return res;
 };
