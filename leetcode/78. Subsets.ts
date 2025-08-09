@@ -5,6 +5,7 @@ const subsets = (nums: number[]): number[][] => {
   const backtrack = (i: number): void => {
     if (nums.length === i) {
       res.push([...curr]);
+
       return;
     }
 
