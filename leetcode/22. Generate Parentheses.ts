@@ -1,18 +1,19 @@
 const generateParenthesis = (n: number): string[] => {
   const res: string[] = [];
 
-  const backtrack = (start: number, end: number, curr: string) => {
-    if (start + end === 2 * n) {
-      res.push(curr);
+  const backtrack = (l: number, r: number, s: string): void => {
+    if (l + r === n * 2) {
+      res.push(s);
+
       return;
     }
 
-    if (start < n) {
-      backtrack(start + 1, end, curr + '(');
+    if (l < n) {
+      backtrack(l + 1, r, `${s}(`);
     }
 
-    if (end < start) {
-      backtrack(start, end + 1, curr + ')');
+    if (r < l) {
+      backtrack(l, r + 1, `${s})`);
     }
   };
 
